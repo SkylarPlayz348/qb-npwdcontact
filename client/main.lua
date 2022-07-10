@@ -19,6 +19,10 @@ local function GetClosestPlayer()
 	return closestPlayer, closestDistance
 end
 
+function givecontact()
+    TriggerEvent('contact:checkDist')
+end
+
 RegisterNetEvent('contact:checkDist', function()
     local player, distance = GetClosestPlayer()
     if player ~= -1 and distance < 2.5 then
@@ -30,6 +34,5 @@ RegisterNetEvent('contact:checkDist', function()
 end)
 
 RegisterNetEvent('contact:giveContact', function(data, num)
-    exports['npwd']:setPhoneVisible(true)
     exports['npwd']:fillNewContact({ name = string.format('%s %s', data.firstname, data.lastname), number = ''..num..'', avatar = '' })
 end)
