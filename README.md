@@ -1,7 +1,7 @@
 # qb-npwdcontact
  
 ## For radial menu
-Replace line:16 of qb-radial menu with this:
+Replace line:16 of `qb-radial/config.lua` menu with this:
 
 ```lua
 event = 'contact:checkDist',
